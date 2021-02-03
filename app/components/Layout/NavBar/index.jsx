@@ -25,9 +25,7 @@ function Footer({ className, pathName }) {
                     <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div className="navbar-nav mr-auto">
                             <a href="index.html" className="nav-item nav-link active">Trang chủ</a>
-                            <a href="index.html" className="nav-item nav-link">Hàng mới</a>
-                            <a href="product-list.html" className="nav-item nav-link">Sản phẩm</a>
-                            <a href="product-detail.html" className="nav-item nav-link">Giới thiệu</a>
+                            <a href="product-list" className="nav-item nav-link">Sản phẩm</a>
                             <a href="cart.html" className="nav-item nav-link">Tin tức</a>
                             <a href="checkout.html" className="nav-item nav-link">Bộ sưu tập</a>
                         </div>

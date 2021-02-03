@@ -33,7 +33,7 @@ function Footer({ className, pathName }) {
                                 <i className="fa fa-heart"></i>
                                 <span>(0)</span>
                             </a>
-                            <a href="cart.html" className="btn cart">
+                            <a href="/gio-hang" className="btn cart">
                                 <i className="fa fa-shopping-cart"></i>
                                 <span>(0)</span>
                             </a>

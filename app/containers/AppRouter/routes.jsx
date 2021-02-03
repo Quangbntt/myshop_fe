@@ -7,6 +7,9 @@ import Dashboard from "containers/Dashboard/Loadable";
 import Home from "containers/Home/Loadable";
 import ProductList from "containers/ProductList/Loadable";
 import ProductDetail from "containers/ProductDetail/Loadable";
+import Cart from "containers/Cart/Loadable";
+import Account from "containers/Account/Loadable";
+import Contact from "containers/Contact/Loadable";
 
 
 import Profile from "containers/Profile/Loadable";
@@ -60,6 +63,21 @@ export const authorizedRoutes = [
     path: "/product-detail",
     exact: true,  
     component: ProductDetail,
+  },
+  {
+    path: "/gio-hang",
+    exact: true,  
+    component: Cart,
+  },
+  {
+    path: "/lien-he",
+    exact: true,  
+    component: Contact,
+  },
+  {
+    path: "/tai-khoan",
+    exact: true,  
+    component: Account,
   },
   
   {
