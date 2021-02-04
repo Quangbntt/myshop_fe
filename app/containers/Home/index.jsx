@@ -31,54 +31,40 @@ const Home = memo(({}) => {
     arrKey: [],
     arrKeyOld: [],
     dataOld: [],
-    trangThaiNT: undefined,
-    route_group: undefined,
-    route: undefined,
-    product: undefined,
   });
   const [totalLength, setTotalLength] = useState(0);
 
   const [params, setParams] = useState({
-    thang: moment(),
     page: 1,
     limit: 100,
-    chieu: { key: 0, label: "Tất cả" },
-    route_group: undefined,
-    route: undefined,
-    product: undefined,
   });
 
-  // const boweload = useCallback(async () => {
-  //   let newParams = {
-  //     thang: params.thang ? moment(params.thang).format("MM/YYYY") : '',
-  //     chieu: _.get(params, "chieu.key"),
-  //     page: params.page,
-  //     limit: params.limit,
-  //     route_group: _.map(params.route_group,"key",[]),
-  //     route: _.map(params.route,"key",[]),
-  //     product: _.map(params.product,"key",[]),
-  //   };
+  const boweload = useCallback(async () => {
+    let newParams = {
+      page: params.page,
+      limit: params.limit,
+    };
 
-  //   setLoading(true);
-  //   let result = await ServiceBase.requestJson({
-  //     url: "/report/report_synthetic",
-  //     method: "GET",
-  //     data: newParams,
-  //   });
-  //   if (result.hasErrors) {
-  //     Ui.showErrors(result.errors);
-  //     setLoading(false);
-  //   } else {
-  //     setLoading(false);
-  //     setTotalLength(_.get(result, "value.total"));
-  //     let arrNew = _.get(result, "value");
-  //     await totalDetailDate(setRow, arrNew);
-  //   }
-  // }, [params]);
-  // useEffect(() => {
-  //   clearTimeout(time);
-  //   time = setTimeout(boweload, 800);
-  // }, [boweload]);
+    setLoading(true);
+    let result = await ServiceBase.requestJson({
+      url: "/product",
+      method: "GET",
+      data: newParams,
+    });
+    if (result.hasErrors) {
+      Ui.showErrors(result.errors);
+      setLoading(false);
+    } else {
+      setLoading(false);
+      setTotalLength(_.get(result, "value.total"));
+      let arrNew = _.get(result, "value");
+      await totalDetailDate(setRow, arrNew);
+    }
+  }, [params]);
+  useEffect(() => {
+    clearTimeout(time);
+    time = setTimeout(boweload, 800);
+  }, [boweload]);
   return (
     <>
         <div className="header">
