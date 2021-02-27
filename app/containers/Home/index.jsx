@@ -47,7 +47,7 @@ const Home = memo(({}) => {
 
     setLoading(true);
     let result = await ServiceBase.requestJson({
-      url: "/product",
+      url: "/product/all",
       method: "GET",
       data: newParams,
     });

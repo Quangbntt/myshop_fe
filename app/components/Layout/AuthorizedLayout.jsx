@@ -67,7 +67,7 @@ const AuthorizedLayout = ({
     >
       {/* <SideBar appConfig={appConfig} collapsed={collapsed} /> */}
       <TopBar />
-      <NavBar />
+      <NavBar onLogOut={onLogOut}/>
       <BottomBar />
       <Layout className="site-layout">
         {/* <TopMenu

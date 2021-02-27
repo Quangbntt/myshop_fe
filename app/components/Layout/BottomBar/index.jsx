@@ -29,10 +29,10 @@ function Footer({ className, pathName }) {
                     </div>
                     <div className="col-md-3">
                         <div className="user">
-                            <a href="wishlist.html" className="btn wishlist">
+                            {/* <a href="wishlist.html" className="btn wishlist">
                                 <i className="fa fa-heart"></i>
                                 <span>(0)</span>
-                            </a>
+                            </a> */}
                             <a href="/gio-hang" className="btn cart">
                                 <i className="fa fa-shopping-cart"></i>
                                 <span>(0)</span>
