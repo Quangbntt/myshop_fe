@@ -9,7 +9,7 @@ import * as style from "components/Variables";
 import { Ui } from "../../../utils/Ui";
 import { $Cookies } from "../../../utils/cookies";
 const prefix = "app.routing.";
-function Footer({ className, pathName, onLogOut, isAuthenticated, profile }) {
+function Navbar({ className, pathName, onLogOut, isAuthenticated, profile }) {
   const proFile = $Cookies.get("ERP_REPORT")
     ? JSON.parse($Cookies.get("ERP_REPORT"))
     : {};
@@ -37,6 +37,7 @@ function Footer({ className, pathName, onLogOut, isAuthenticated, profile }) {
   const handleCancel = () => {
     setVisible(false);
   };
+  
   return (
     <>
       <Modal
@@ -125,13 +126,13 @@ function Footer({ className, pathName, onLogOut, isAuthenticated, profile }) {
   );
 }
 
-Footer.propTypes = {
+Navbar.propTypes = {
   classNameNameName: PropTypes.any,
   pathName: PropTypes.any,
 };
 
 export default styled(
-  (Footer)
+  (Navbar)
 )`
   padding: 1rem 0 1rem 0;
   a {
